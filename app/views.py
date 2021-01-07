@@ -56,7 +56,7 @@ def add_question(request):
         form = AskQuestion(data=request.POST, author=request.user.author)
         if form.is_valid():
             question = form.save()
-            return redirect(reverse('question', kwargs={'id': question.id}))
+            return redirect(reverse('question', kwargs={'pk': question.id}))
 
     else:
         form = AskQuestion(None)
