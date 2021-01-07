@@ -76,7 +76,7 @@ def question_answer(request, pk):
         form = AnswerForm(data=request.POST, author=request.user.author, question=question)
         if form.is_valid():
             form.save()
-            return redirect(reverse('question', kwargs={'id': pk}) + '?page=last')
+            return redirect(reverse('question', kwargs={'pk': pk}) + '?page=last')
 
     else:
         form = AnswerForm(None, None)
