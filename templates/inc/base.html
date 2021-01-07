@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <title>AskMe project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+    <link href="{% static "/css/add-question.css" %}" rel="stylesheet">
+    <link href="{% static "/css/style-206.css" %}" rel="stylesheet">
+    <link href="{% static "/font-awesome-4.7.0/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "/css/base.css" %}" rel="stylesheet">
+    <link href="{% static "/css/login-page.css" %}" rel="stylesheet">
+    <link href="{% static "/css/sign-form.css" %}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "/css/bootstrap.min.css" %}" rel="stylesheet">
+
+</head>
+
+{% include 'inc/navbar.html' %}
+
+<body class="d-flex flex-column h-100">
+
+<main role="main" class="container mt-5">
+    <div class="row mt-5">
+        <div class="col-8">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+        <div class="col-4 mt-5">
+                {% block right %}
+                {% endblock right %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include 'inc/footer.html' %}
+
+<script src="{% static "js/jquery-3.5.1.min.js" %}"></script>
+<script src="{% static "js/popper.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+</body>
+</html>

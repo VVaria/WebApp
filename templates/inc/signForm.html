@@ -1,0 +1,15 @@
+{% load static %}
+<link href="{% static "/css/sign_form.css" %}" rel="stylesheet">
+<div class="container loginForm">
+    <h1>Sign Up</h1>
+
+    {% include 'inc/form.html' with file=True %}
+
+    <div class="form-inline">
+        <div class="form-group pull-right">
+            <label class="loginPwReset">
+                <a href="{% url 'login' %}">Login now</a>
+            </label>
+        </div>
+    </div>
+</div>

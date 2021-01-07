@@ -1,0 +1,29 @@
+{% extends 'inc/base.html' %}
+{% load bootstrap_pagination %}
+{% load static %}
+
+{% block content%}
+<legend class="ui-content">
+    {% if type == 'hot'%}
+    <a href="{% url 'new' %}">New questions</a>
+    <a>Hot questions</a>
+    {% elif type == 'new' %}
+    <a>New questions</a>
+    <a href="{% url 'hot' %}">Hot questions</a>
+    {% else %}
+    <a href="{% url 'new' %}">New questions</a>
+    <a href="{% url 'hot' %}">Hot questions</a>
+    {% endif%}
+</legend>
+
+{% for question in questions %}
+{% include 'inc/one_question.html' %}
+{% endfor %}
+    {% bootstrap_paginate questions range=10 show_first_last=True%}
+{% endblock content%}
+
+{% block right%}
+<div class="ui-content">
+    {% include 'inc/right_column.html' %}
+</div>
+{% endblock right%}

@@ -1,0 +1,40 @@
+{% load static %}
+<div class="ui-206">
+    <div class="ui-outer">
+
+        <div class="media mt-3">
+            <div class="col-md-2 col-sm-2 col-xs-2 col-pad">
+                <div class="media-left">
+                        <img class="media-object img-rounded" src={{ comment.author.avatar.url }} width="80px"
+                        height="80px"
+                        alt="...">
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+                <div class="media-body">
+                    <div class="media-heading">
+                        <b class="author">{{comment.author.name}}</b>
+                        <div class="metadata text-secondary">
+                            <span class="date">{{comment.date}}</span>
+                        </div>
+                    </div>
+                    <div class="media-text text-justify">{{comment.text}}</div>
+                    <div class="row footer-comment">
+                         <a class="vote plus mx-1" title="Нравится">
+                            <i class="fa fa-thumbs-o-up text-success"></i>
+                        </a>
+                        <span class="rating"> {{ comment.rating }} </span>
+                        <a class="vote minus mx-1" title="Не нравится">
+                            <i class="fa fa-thumbs-o-down text-danger"></i>
+                        </a>
+                        <span class="devide mx-2"> | </span>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Correct</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

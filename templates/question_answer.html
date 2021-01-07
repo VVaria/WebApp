@@ -1,0 +1,55 @@
+{% extends 'inc/base.html' %}
+{% load bootstrap_pagination %}
+{% load static %}
+
+{% block content %}
+    <label class="h3">{{ question.title }}</label>
+
+    {% for question in questions %}
+        {% include 'inc/one_question.html' %}
+    {% endfor %}
+    <hr class="my-4" style=" border: 0;
+          height: 1px;
+          background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);">
+
+    {% for comment in comments %}
+        {% include 'inc/comment.html' %}
+    {% endfor %}
+
+    {% bootstrap_paginate comments range=10 show_first_last=True %}
+
+    {% if comments|length > 0 %}
+        <hr class="my-4" style=" border: 0;
+              height: 1px;
+              background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+              background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+              background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+              background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);">
+    {% endif %}
+
+    <div class="ui-206">
+        <div class="ui-outer">
+            {% if request.user.is_authenticated %}
+                {% include 'inc/form.html' %}
+            {% else %}
+                <div>
+                    <a href="{% url 'signup' %}?next={{ request.path }}">Зарегистрируйтесь </a>
+                     или
+                     <a href="{% url 'login' %}?next={{ request.path }}">войдите, </a>
+                    чтобы оставить комментарий.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+{% block right %}
+    <div class="ui-content">
+        {% include 'inc/right_column.html' %}
+    </div>
+{% endblock right %}

@@ -1,0 +1,18 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block content%}
+<label class="h4">New question</label>
+
+<div class="ui-206">
+    <div class="ui-outer">
+        {% include 'inc/form.html' %}
+    </div>
+</div>
+{% endblock content%}
+
+{% block right%}
+<div class="ui-content">
+{% include 'inc/right_column.html' %}
+    </div>
+{% endblock right%}

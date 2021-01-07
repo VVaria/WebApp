@@ -1,0 +1,14 @@
+{% load bootstrap4 %}
+{% load static %}
+<link href="{% static "/css/login_page.css" %}" rel="stylesheet">
+<div class="container loginForm">
+    <h1>Login</h1>
+    {% include 'inc/form.html' %}
+    <div class="form-inline">
+        <div class="form-group pull-right">
+            <label class="loginPwReset">
+                <a href="{% url 'signup' %}">Register now</a>
+            </label>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+/* General CSS */
+body{
+	background:#f4f8fd !important;
+}
+/* UI -  X */
+.ui-206{
+    margin-top: 40px;
+    width: 800px;
+    margin-bottom: 10px;
+}
+/* Column Padding */
+.ui-206 .col-pad{
+	padding-left: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-right:0px;
+}
+@media(max-width: 650px){
+	.ui-206 .col-pad{
+		width:100%;
+	}
+}
+/* Outer */
+.ui-206 .ui-outer{
+	max-width:700px;
+	border:1px solid #ddd;
+	border-radius:4px;
+	padding:10px;
+	background:#fff;
+	box-shadow:2px 2px 0px 1px rgba(0,0,0,0.06);
+}
+@media(max-width: 650px){
+	.ui-206 .ui-outer{
+		max-width:400px;
+		padding:5px 20px 5px;
+	}
+}
+/* Logo */
+.ui-logo{
+	max-width:160px;
+	margin:10px 0px;
+}
+@media(max-width: 650px){
+	.ui-206 .ui-outer .ui-logo{
+		padding:0px;
+	}
+}
+/* Content */
+.ui-content{
+	max-width:600px;
+	margin-left: 15px;
+}
+/* Heading */
+.ui-206 .ui-outer .ui-content h4{
+	font-size:21px;
+	line-height:25px;
+}
+.ui-206 .ui-outer .ui-content h4 > a{
+	color:#666 !important;
+}
+/* Paragraph */
+.ui-206 .ui-outer .ui-content p{
+	color:#999;
+	font-size:16px;
+	line-height:23px;
+	margin:3px 0px 5px 0px;
+}
+/* Success and Ending */
+.ui-206 .ui-outer .ui-content span{
+	margin-right:20px;
+	color:#999;
+	font-size:14px;
+	line-height:23px;
+}
+@media(max-width: 366px){
+	.ui-206 .ui-outer .ui-content span{
+		display:block;
+		line-height:25px;
+	}
+}
+.ui-206 .ui-outer .ui-content span > b{
+	color:#777 !important;
+}
+/* Button */

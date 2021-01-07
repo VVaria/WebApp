@@ -1,0 +1,58 @@
+{% load static %}
+
+<div class="ui-206">
+    <div class="">
+        <div class="ui-outer">
+            <div class="media mt-3">
+                <div class="col-md-2 col-sm-2 col-xs-2 col-pad">
+                    <!-- Logo -->
+                    <div class="ui-logo">
+                        <img src="{{ question.author.avatar.url}}" width="100px" height="100px" alt=""
+                             class="img-responsive"/>
+                    </div>
+
+                    <div class="ui-content">
+                        <div class="media-heading">
+                            <b class="author">{{ question.author.name }}</b>
+                            <div class="metadata">
+                                <span class="date">{{ question.date }}</span>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <i class="fa fa-thumbs-o-up text-success"></i>
+                        </a>
+                        <b>{{ question.rating }}</b>
+                        <a href="#">
+                            <i class="fa fa-thumbs-o-down text-danger"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-9 col-pad">
+                    <!-- Content -->
+                    <div class="ui-content">
+                        <!-- Heading -->
+                        <h4><a href="{% url 'question' pk=question.id %}">{{ question.title }}</a></h4>
+                        <!-- Paragraph -->
+                        {% if style == True %}
+                            <p class="overflow-hidden" style="max-height: 205px">{{ question.text | truncatewords:50 }}</p>
+                        {% else %}
+                            <p>{{ question.text }}</p>
+                        {% endif %}
+                        <!-- Success -->
+                        <div class="fixed-sticky">
+                            <a href="{% url 'question' pk=question.id %}">
+                                answers({{ question.answers_count }})
+                            </a>&nbsp;
+                            <!-- Ends -->
+                            <a>Tags:
+                                {% for tag in question.all_tags %}
+                                    <a href="{% url 'tag' tag=tag %}">{{ tag }}</a>
+                                {% endfor %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

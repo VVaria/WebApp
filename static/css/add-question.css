@@ -1,0 +1,27 @@
+body{
+	background:#f4f8fd !important;
+}
+.ui-206 .btn-primary{
+    width: 120px;
+    font-size: 15px;
+}
+.ui-content span, .ui-content a{
+	color:#777;
+}
+.ui-content span:hover, .ui-content a:hover{
+	outline: 0;
+    text-decoration: none;
+    color: #999;
+}
+.ui-206 .btn-primary, .ui-206 .btn-primary:active {
+	color: #fff;
+	background: #33cabb !important;
+	border: none;
+}
+.ui-206 .btn-primary:hover, .ui-206 .btn-primary:focus {
+	color: #fff;
+	background: #31bfb1 !important;
+}
+.ui-206 .ui-outer .input-group .question-text{
+    min-height: 200px;
+}
